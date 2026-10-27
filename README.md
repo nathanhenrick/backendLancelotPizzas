@@ -6,15 +6,16 @@ Feita com Laravel 13, Sanctum (token Bearer) e MySQL, no padrão Controller → 
 
 ## Rodar com Docker
 
-O jeito mais simples é pelo repositório do site, que sobe site, API e MySQL juntos e já constrói esta API a partir do GitHub:
+O jeito mais simples é pelo repositório do site, que sobe site, API e MySQL juntos. Clone os dois lado a lado, na mesma pasta:
 
 ```bash
 git clone https://github.com/nathanhenrick/lancelotPizzas.git
+git clone https://github.com/nathanhenrick/backendLancelotPizzas.git
 cd lancelotPizzas
 docker compose up --build
 ```
 
-Detalhes (portas, credenciais de demonstração, usar uma cópia local desta API) no [README do site](https://github.com/nathanhenrick/lancelotPizzas#rodar-com-docker).
+Detalhes (portas, credenciais de demonstração, API em outra pasta) no [README do site](https://github.com/nathanhenrick/lancelotPizzas#rodar-com-docker).
 
 O `Dockerfile` deste repositório é o que o compose usa. Ao subir, o container roda as migrations e o seeder (que não duplica o cardápio) e, se `APP_KEY` não vier do ambiente, gera uma e guarda no volume `storage/app`.
 
